@@ -27,9 +27,5 @@ if xsetwacom list devices | grep -q Wacom; then
     fi
 fi
 
-xss-lock \
-    --transfer-sleep-lock -- \
-    i3lock \
-    --image="$HOME/Pictures/background/Neon_red.png" \
-    --nofork
+xss-lock --transfer-sleep-lock -- "$HOME/.config/qtile/i3lock_wrapper.sh"
 

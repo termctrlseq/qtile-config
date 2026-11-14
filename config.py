@@ -1,4 +1,5 @@
 import re
+import time
 from pathlib import Path
 from subprocess import Popen
 
@@ -48,11 +49,22 @@ def autostart():
     Popen([str(Path(__file__).with_name(auto_start_sh))])
 
 
-import time
+@hook.subscribe.startup
+def startup():
+    qtile.screens[0].set_wallpaper(
+        str(Path("~/Pictures/background/Neon.png").expanduser())
+    )
 
 
-@hook.subscribe.restart
-def restart():
+@hook.subscribe.resume
+def resume():
+    qtile.screens[0].set_wallpaper(
+        str(Path("~/Pictures/background/Neon_green.png").expanduser())
+    )
+
+
+@hook.subscribe.user("run_on_unlock")  # type: ignore
+def run_on_unlock():
     screen = qtile.screens[0]
 
     logger.warning(f"Initial wallpaper: {time.time()}")
@@ -66,7 +78,7 @@ def restart():
             str(Path("~/Pictures/background/Neon.png").expanduser())
         )
 
-    qtile.call_later(10, change_wallpaper)
+    qtile.call_later(1, change_wallpaper)
 
 
 @hook.subscribe.client_new
