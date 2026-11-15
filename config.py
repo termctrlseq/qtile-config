@@ -13,7 +13,7 @@ from libqtile.config import (
 from libqtile.lazy import lazy
 
 # from libqtile.log_utils import logger
-from display import update_displays  # noqa: F401
+from display import update_displays
 from globals_config import (
     ALT,
     CTRL,
@@ -30,12 +30,13 @@ from globals_config import (
     save_pos,
 )
 from groups import groups
-from imv import (  # type: ignore  # noqa: F401
+from imv import (  # type: ignore
     imv,
     imv_startup,
 )
 from keybindings import keys
-from screens_config import generate_screens  # noqa: F401
+from screens_config import generate_screens
+from wallpaper import run_on_resume, run_on_startup, run_on_unlock
 
 
 @hook.subscribe.startup_once
@@ -46,43 +47,6 @@ def autostart():
         auto_start_sh = "autostart_wayland.sh"
 
     Popen([str(Path(__file__).with_name(auto_start_sh))])
-
-
-@hook.subscribe.startup
-def startup():
-    screen = qtile.screens[0]
-    screen.set_wallpaper(
-        str(Path("~/Pictures/background/Neon_Light_v2.png").expanduser())
-    )
-
-    def change_wallpaper(wallpaper):
-        screen.set_wallpaper(str(Path(wallpaper).expanduser()))
-
-    qtile.call_later(
-        5, change_wallpaper, "~/Pictures/background/Neon_Dark_v2.png"
-    )
-
-
-@hook.subscribe.resume
-def resume():
-    qtile.screens[0].set_wallpaper(
-        str(Path("~/Pictures/background/Neon_Green_v2.png").expanduser())
-    )
-
-
-@hook.subscribe.user("run_on_unlock")  # type: ignore
-def run_on_unlock():
-    screen = qtile.screens[0]
-
-    def change_wallpaper(wallpaper):
-        screen.set_wallpaper(str(Path(wallpaper).expanduser()))
-
-    qtile.call_later(
-        2, change_wallpaper, "~/Pictures/background/Neon_Light_v2.png"
-    )
-    qtile.call_later(
-        3, change_wallpaper, "~/Pictures/background/Neon_Dark_v2.png"
-    )
 
 
 @hook.subscribe.client_new
