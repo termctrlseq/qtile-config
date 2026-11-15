@@ -1,6 +1,6 @@
 #!/bin/bash
 
-i3lock --nofork --image="$HOME/Pictures/background/Neon_red.png"
+i3lock --nofork --image="$HOME/Pictures/background/Neon_Red_v2.png"
 status=$?
 
 if ((status == 0)); then
