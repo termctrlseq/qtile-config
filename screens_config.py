@@ -72,8 +72,8 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                     parse_text=remove_markup,
                 ),
                 widget.WindowName(
-                    background=[Color.BLACK_BLUE, Color.DARK_BLUE_GRAY],
-                    fontshadow=Color.BLACK,
+                    background=[Color.BLACK, Color.DARK_BLUE_GRAY],
+                    fontshadow=Color.BLACK_BLUE,
                     foreground=Color.LIGHT_VIOLET,
                     max_chars=_win_name_max_chars,
                     mouse_callbacks={
@@ -106,8 +106,8 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                 ),
                 widget.StatusNotifier(icon_size=font_main_size),
                 widget.Mpris2(
-                    background=[Color.BLACK_BLUE, Color.DARK_BLUE_GRAY],
-                    fontshadow=Color.BLACK,
+                    background=[Color.BLACK, Color.DARK_BLUE_GRAY],
+                    fontshadow=Color.BLACK_BLUE,
                     foreground=Color.LIGHT_VIOLET,
                     format="{xesam:title} - {xesam:artist} │ {qtile:player} ",
                     mouse_callbacks={

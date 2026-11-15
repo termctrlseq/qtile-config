@@ -94,10 +94,10 @@ class Color(StrEnum):
     DARK_VIOLET = "#515478"
     LIGHT_GRAY = "#a1a1a1"
     MID_GRAY = "#444455"
-    DARK_GRAY = "#252536"
+    DARK_GRAY = "#212146"
     DARK_BLUE_GRAY = "#25253b"
     BLACK_GRAY = "#12121b"
-    BLACK = "#0f0f0f"
+    BLACK = "#010614"
     BLACK_BLUE = "#0c0c0f"
     PURE_BLACK = "#000000"
 
