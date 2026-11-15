@@ -14,8 +14,7 @@ groups = [
                     "--title='scratchpad' "
                     "-o background='#0a0b11' "
                     "-o background_opacity=0.9 "
-                    "-o font_size=24 "
-                    "tmux new -As term"
+                    "-o font_size=12.5 "
                 ),
                 opacity=1.0,
                 width=0.65,
