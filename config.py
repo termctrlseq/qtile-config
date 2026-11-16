@@ -49,6 +49,11 @@ def autostart():
     Popen([str(Path(__file__).with_name(auto_start_sh))])
 
 
+@hook.subscribe.startup_complete
+def run_on_every_restart():
+    qtile.call_later(1, qtile.to_screen, 0)
+
+
 @hook.subscribe.client_new
 def client_new(client):
     if client.match(Match(wm_class="imv")):
