@@ -7,7 +7,7 @@ Requires:
 
 Example usage from imv config:
     <Right> = next; exec DISPLAY=${DISPLAY%.*} qtile cmd-obj -o cmd -f fire_user_hook -a imv $imv_pid "$imv_current_file"
-"""  # noqa: E501
+"""
 
 import os
 from subprocess import Popen, SubprocessError, run
