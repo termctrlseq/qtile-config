@@ -44,31 +44,6 @@ keys = [  # {{{
         lazy.group.focus_back(),
         desc="Focus the window that had focus before the current.",
     ),
-    # Move focus and/or windows between screens
-    Key(
-        [ALT, CTRL],
-        "Tab",
-        lazy.next_screen(),
-        desc="Switch to the next screen.",
-    ),
-    Key(
-        [ALT, SHIFT],
-        "Tab",
-        move_to_next_screen(),
-        desc="Move window and focus to next screen.",
-    ),
-    Key(
-        [ALT, SUPER],
-        "1",
-        lazy.to_screen(0),
-        desc="Focus primary screen.",
-    ),
-    Key(
-        [ALT, SUPER],
-        "2",
-        lazy.to_screen(-1),
-        desc="Focus other screen.",
-    ),
     # Move windows between left/right columns or move up/down in
     # current stack.
     Key(
@@ -317,6 +292,31 @@ _monitor = [  # {{{
         desc="Toggle right display",
     ),
     Key([SUPER], "d", toggle_other_displays(), desc="Toggle other display"),
+    # Move focus and/or windows between screens
+    Key(
+        [ALT, CTRL],
+        "Tab",
+        lazy.next_screen(),
+        desc="Switch to the next screen.",
+    ),
+    Key(
+        [ALT, SHIFT],
+        "Tab",
+        move_to_next_screen(),
+        desc="Move window and focus to next screen.",
+    ),
+    Key(
+        [ALT, SUPER],
+        "1",
+        lazy.to_screen(0),
+        desc="Focus primary screen.",
+    ),
+    Key(
+        [ALT, SUPER],
+        "2",
+        lazy.to_screen(-1),
+        desc="Focus other screen.",
+    ),
 ]  # }}}
 
 _scratchpad = [  # {{{
