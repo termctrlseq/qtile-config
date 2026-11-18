@@ -60,8 +60,8 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                     urgent_border=Color.PINK,
                 ),
                 widget.Notify(
-                    background=Color.BLACK_GRAY,
-                    background_low=Color.BLACK_GRAY,
+                    background=[Color.BLACK, Color.DARK_BLUE_GRAY],
+                    background_low=[Color.BLACK, Color.DARK_BLUE_GRAY],
                     default_timeout=None,
                     default_timeout_low=None,
                     default_timeout_urgent=None,
