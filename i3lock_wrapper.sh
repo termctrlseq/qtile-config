@@ -4,7 +4,9 @@ revert() {
     xset dpms 0 0 7200
 }
 trap revert HUP INT TERM
-xset +dpms dpms 30 30 30
+xset +dpms dpms 300 300 300
+
+qtile cmd-obj -o root -f fire_user_hook -a run_on_lock
 
 i3lock \
     --nofork \

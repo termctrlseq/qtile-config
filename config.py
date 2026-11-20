@@ -36,7 +36,11 @@ from imv import (  # type: ignore
 )
 from keybindings import keys
 from screens_config import generate_screens
-from wallpaper import run_on_resume, run_on_startup, run_on_unlock
+from wallpaper import (
+    wallpaper_on_lock,
+    wallpaper_on_startup,
+    wallpaper_on_unlock,
+)
 
 
 @hook.subscribe.startup_once

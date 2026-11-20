@@ -281,11 +281,6 @@ def get_other_screen():
                 Color.PURE_BLACK,
             ],
         ),
-        wallpaper=str(
-            Path(
-                "~/Pictures/background/PA220040_AI_20260722_163251.png"
-            ).expanduser()
-        ),
         wallpaper_mode="fill",
     )
 
