@@ -1,6 +1,9 @@
+from asyncio import Handle
 from pathlib import Path
 
 from libqtile import hook, qtile
+
+handles: list[Handle] = []
 
 backgrounds = Path().home() / "Pictures" / "background"
 dark = (
@@ -22,6 +25,9 @@ red = (
 
 
 def call_later_maybe(delay_pic: list[tuple[int, tuple[str, str]]]) -> None:
+    for handle in handles:
+        handle.cancel()
+
     for tp in delay_pic:
         for scr in range(len(qtile.get_screens())):
             screen = qtile.screens[scr]
@@ -30,7 +36,9 @@ def call_later_maybe(delay_pic: list[tuple[int, tuple[str, str]]]) -> None:
             if tp[0] == 0:
                 screen.set_wallpaper(bg)
             else:
-                qtile.call_later(tp[0], screen.set_wallpaper, bg)
+                handles.append(
+                    qtile.call_later(tp[0], screen.set_wallpaper, bg)
+                )
 
 
 @hook.subscribe.startup
