@@ -233,7 +233,7 @@ floats_kept_above = False
 focus_on_window_activation = "smart"
 focus_previous_on_window_remove = True
 follow_mouse_focus = "click_or_drag_only"
-reconfigure_screens = True
+reconfigure_screens = False
 wl_input_rules = {
     "type:touchpad": InputConfig(natural_scroll=True, pointer_accel=0.3),
     "type:pointer": InputConfig(natural_scroll=False),
