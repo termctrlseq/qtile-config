@@ -6,6 +6,7 @@ from libqtile.lazy import lazy
 # from libqtile.log_utils import logger
 from globals_config import (
     IS_WAYLAND,
+    Color,
     display_modes,
     display_ports,
     display_rates,
@@ -111,6 +112,7 @@ for i, port in enumerate(display_ports):
         widget.TextBox(
             text=" ",
             fmt="<span rise='-17pt'>{}</span>",
+            foreground=Color.SLATE_BLUE,
             mouse_callbacks={
                 "Button1": toggle_display(port),
                 "Button3": lazy.group["0"].dropdown_toggle("key_bindings"),

@@ -74,7 +74,7 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                 widget.WindowName(
                     background=[Color.BLACK, Color.DARK_BLUE_GRAY],
                     fontshadow=Color.BLACK_BLUE,
-                    foreground=Color.LIGHT_VIOLET,
+                    foreground=Color.MUTED_VIOLET_GRAY,
                     max_chars=_win_name_max_chars,
                     mouse_callbacks={
                         "Button1": lazy.widget["notify"].display(),
@@ -85,6 +85,7 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                 ),
                 widget.Clock(
                     font="sans bold",
+                    foreground=Color.LIGHT_MID_GRAY,
                     format=" %a %b %d %I:%M %p ",
                     mouse_callbacks={
                         "Button1": lazy.spawn(
@@ -108,7 +109,7 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                 widget.Mpris2(
                     background=[Color.BLACK, Color.DARK_BLUE_GRAY],
                     fontshadow=Color.BLACK_BLUE,
-                    foreground=Color.LIGHT_VIOLET,
+                    foreground=Color.DARK_VIOLET_GRAY,
                     format="{xesam:title} - {xesam:artist} │ {qtile:player} ",
                     mouse_callbacks={
                         # left click: play/pause
@@ -141,6 +142,7 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                     emoji=True,
                     emoji_list=[" ", " ", " ", " "],
                     fmt="<span rise='-15pt'>  {}</span>",
+                    foreground=Color.SLATE_BLUE,
                     get_volume_command=(
                         "wpctl get-volume @DEFAULT_SINK@"
                         " | awk '{print $2*100 \"%\"}'"
@@ -157,6 +159,7 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                         "wpctl get-volume @DEFAULT_SINK@ | awk '{print $3}'"
                     ),
                     check_mute_string="[MUTED]",
+                    foreground=Color.SLATE_BLUE,
                     get_volume_command=(
                         "wpctl get-volume @DEFAULT_SINK@"
                         " | awk '{print $2*100 \"%\"}'"
@@ -171,6 +174,7 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                 ),
                 audio_output_widget,
                 widget.ThermalSensor(
+                    foreground=Color.PURPLE,
                     format="  {temp:.0f}{unit}",
                     mouse_callbacks={
                         "Button3": lazy.group["0"].dropdown_toggle("btop"),
@@ -179,6 +183,7 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                     width=widget_widths["thermal"],
                 ),
                 widget.CPU(
+                    foreground=Color.GRAY_VIOLET,
                     format="  {load_percent:2.0f}%",
                     mouse_callbacks={
                         "Button3": lazy.group["0"].dropdown_toggle("btop"),
@@ -187,6 +192,7 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                 ),
                 widget.TextBox(
                     " ",
+                    foreground=Color.GRAY_VIOLET,
                     fontsize=round(font_main_size * 1.15),
                     # fmt="<span rise='-19pt'>{}</span>",
                     mouse_callbacks={
@@ -195,6 +201,7 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                     width=widget_widths["mem_icon"],
                 ),
                 widget.Memory(
+                    foreground=Color.GRAY_VIOLET,
                     format="{MemUsed:2.1f}{mm}",
                     mouse_callbacks={
                         "Button3": lazy.group["0"].dropdown_toggle("btop"),
@@ -203,10 +210,12 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                     width=widget_widths["mem_g"],
                 ),
                 widget.Net(
+                    foreground=Color.MUTED_BLUE,
                     format="{down:>4.0f}{down_suffix:>2}󰶡",
                     width=widget_widths["net_down"],
                 ),
                 widget.Net(
+                    foreground=Color.MUTED_BLUE,
                     format="󰶣{up:<.0f}{up_suffix:<}",
                     width=widget_widths["net_up"],
                 ),
@@ -217,6 +226,7 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                     default_text=" ",
                     fmt="<span rise='-17pt'>{}</span>",
                     fontsize=round(font_main_size * 1.07),
+                    foreground=Color.PURPLE,
                     width=widget_widths["quick_exit"],
                 ),
             ],

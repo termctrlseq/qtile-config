@@ -6,7 +6,7 @@ from libqtile.lazy import lazy
 from libqtile.log_utils import logger
 from libqtile.utils import send_notification
 
-from globals_config import font_main_size, widget_widths
+from globals_config import Color, font_main_size, widget_widths
 
 
 class Output(Enum):
@@ -135,6 +135,7 @@ def next_sink(_, reverse: bool = False) -> None:
 
 audio_output_widget = widget.GenPollText(
     fontsize=round(font_main_size * 1.15),
+    foreground=Color.MUTED_BLUE,
     fmt="<span rise='6pt'>{}</span>",
     mouse_callbacks={
         "Button1": next_sink(),
