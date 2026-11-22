@@ -210,12 +210,12 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                     width=widget_widths["mem_g"],
                 ),
                 widget.Net(
-                    foreground=Color.MUTED_BLUE,
+                    foreground=Color.GREENISH_BLUE_GRAY,
                     format="{down:>4.0f}{down_suffix:>2}󰶡",
                     width=widget_widths["net_down"],
                 ),
                 widget.Net(
-                    foreground=Color.MUTED_BLUE,
+                    foreground=Color.GREENISH_BLUE_GRAY,
                     format="󰶣{up:<.0f}{up_suffix:<}",
                     width=widget_widths["net_up"],
                 ),
@@ -233,12 +233,7 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
             round(font_main_size * 1.57),  # bar height
             background=[Color.DARK_GRAY, Color.BLACK],
             border_width=2,
-            border_color=[
-                Color.PURE_BLACK,
-                Color.PURE_BLACK,
-                Color.BLACK,
-                Color.PURE_BLACK,
-            ],
+            border_color=Color.BLACK,
         ),
         # wallpaper=str(Path("~/Pictures/background/Neon.png").expanduser()),
         wallpaper_mode="fill",
