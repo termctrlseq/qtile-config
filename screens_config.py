@@ -210,12 +210,12 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                     width=widget_widths["mem_g"],
                 ),
                 widget.Net(
-                    foreground=Color.GREENISH_BLUE_GRAY,
+                    foreground=Color.DARK_VIOLET_GRAY,
                     format="{down:>4.0f}{down_suffix:>2}󰶡",
                     width=widget_widths["net_down"],
                 ),
                 widget.Net(
-                    foreground=Color.GREENISH_BLUE_GRAY,
+                    foreground=Color.DARK_VIOLET_GRAY,
                     format="󰶣{up:<.0f}{up_suffix:<}",
                     width=widget_widths["net_up"],
                 ),

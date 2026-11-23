@@ -15,19 +15,19 @@ if bg_exists := backgrounds.exists():
     )
     background = Background(
         dark={
-            "2560": backgrounds / "Neon_Dark_v2.png",
+            "2560": backgrounds / "qtile_wallpaper_dark_2560.png",
             "1680": backgrounds / "Neon_Dark_v2_1680.png",
         },
         light={
-            "2560": backgrounds / "Neon_Light_v2.png",
+            "2560": backgrounds / "qtile_wallpaper_light_2560.png",
             "1680": backgrounds / "Neon_Light_v2_1680.png",
         },
         green={
-            "2560": backgrounds / "Neon_Green_v2.png",
+            "2560": backgrounds / "qtile_wallpaper_green_2560.png",
             "1680": backgrounds / "Neon_Green_v2_1680.png",
         },
         red={
-            "2560": backgrounds / "Neon_Red_v2.png",
+            "2560": backgrounds / "qtile_wallpaper_red_2560.png",
             "1680": backgrounds / "Neon_Red_v2_1680.png",
         },
     )

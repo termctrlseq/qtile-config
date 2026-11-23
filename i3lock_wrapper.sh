@@ -10,7 +10,7 @@ qtile cmd-obj -o root -f fire_user_hook -a run_on_lock
 
 i3lock \
     --nofork \
-    --image="$HOME/Pictures/background/Neon_Red_v2.png" \
+    --image="$HOME/Pictures/background/qtile_wallpaper_red_2560.png" \
     --color=010614
 
 status=$?
