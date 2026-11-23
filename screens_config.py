@@ -212,11 +212,13 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                 widget.Net(
                     foreground=Color.DARK_VIOLET_GRAY,
                     format="{down:>4.0f}{down_suffix:>2}󰶡",
+                    update_interval=2,
                     width=widget_widths["net_down"],
                 ),
                 widget.Net(
                     foreground=Color.DARK_VIOLET_GRAY,
                     format="󰶣{up:<.0f}{up_suffix:<}",
+                    update_interval=2,
                     width=widget_widths["net_up"],
                 ),
                 *display_widget,
@@ -226,7 +228,7 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                     default_text=" ",
                     fmt="<span rise='-17pt'>{}</span>",
                     fontsize=round(font_main_size * 1.07),
-                    foreground=Color.PURPLE,
+                    foreground=Color.DARK_VIOLET_GRAY,
                     width=widget_widths["quick_exit"],
                 ),
             ],
@@ -260,7 +262,7 @@ def get_other_screen():
                     background=[Color.BLACK, Color.DARK_BLUE_GRAY],
                     fontshadow=Color.BLACK,
                     fontsize=font_other_size,
-                    foreground=Color.LIGHT_VIOLET,
+                    foreground=Color.MUTED_VIOLET_GRAY,
                     mouse_callbacks={
                         "Button1": lazy.widget["notify"].display(),
                         "Button3": lazy.window.kill(),
@@ -273,18 +275,14 @@ def get_other_screen():
                     default_text="  ",
                     fmt="<span rise='-17pt'>{}</span>",
                     fontsize=round(font_other_size * 1.07),
+                    foreground=Color.DARK_VIOLET_GRAY,
                     width=round(font_other_size * 2.14),
                 ),
             ],
             round(font_main_size * 1.57),  # bar height
             background=[Color.DARK_GRAY, Color.BLACK],
             border_width=2,
-            border_color=[
-                Color.PURE_BLACK,
-                Color.PURE_BLACK,
-                Color.BLACK,
-                Color.PURE_BLACK,
-            ],
+            border_color=Color.BLACK,
         ),
         wallpaper_mode="fill",
     )
