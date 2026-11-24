@@ -7,6 +7,7 @@ from libqtile import bar, widget
 from libqtile.config import Screen, ScreenRect
 from libqtile.lazy import lazy
 from libqtile.log_utils import logger
+from qtile_extras.widget import statusnotifier
 
 from audio_sink import audio_output_widget
 from display import display_widget
@@ -105,7 +106,7 @@ def get_main_screen(screen_rect: ScreenRect) -> Screen:
                 widget.Spacer(
                     mouse_callbacks={"Button1": lazy.spawn("easyeffects")}
                 ),
-                widget.StatusNotifier(icon_size=font_main_size),
+                statusnotifier.StatusNotifier(icon_size=font_main_size),
                 widget.Mpris2(
                     background=[Color.BLACK, Color.DARK_BLUE_GRAY],
                     fontshadow=Color.BLACK_BLUE,
